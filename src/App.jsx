@@ -9,13 +9,13 @@ import NoteDetails from "./components/NoteDetails";
 import { useState } from "react";
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [theme, setTheme] = useState(false);
 
   return (
     <BrowserRouter>
-      <div className="container" data-theme={darkTheme ? "dark" : "light"}>
+      <div className="container" data-theme={theme ? "dark" : "light"}>
         <div className="app">
-          <Header setDarkTheme={setDarkTheme} />
+          <Header theme={theme} setTheme={setTheme} />
 
           <Routes>
             <Route path="/notes/create" element={<NoteDetails />} />
