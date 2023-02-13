@@ -1,3 +1,3 @@
 ## react notes web app
 
-![preview image](preview.gif "preview")
+<img src="preview.gif" width="400px" alt="project preview image" />
