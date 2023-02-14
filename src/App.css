@@ -69,13 +69,20 @@ a {
   width: 100%;
   max-width: 480px;
   height: 90vh;
-  overflow: hidden;
   margin: 5vh auto;
+  overflow: hidden;
   background-color: var(--color-white);
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr;
+}
+
+@media (max-width: 480px) {
+  .app {
+    height: 100%;
+    margin: 0;
+  }
 }
 
 .app-header {
