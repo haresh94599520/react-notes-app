@@ -97,12 +97,14 @@ function NoteDetails() {
       </div>
 
       {note || isNew ? (
-        <textarea
-          autoFocus
-          name="note-content"
-          value={note?.body ?? ""}
-          onChange={(e) => setNote({ ...note, body: e.currentTarget.value })}
-        ></textarea>
+        <div className="textarea-container">
+          <textarea
+            autoFocus
+            name="note-content"
+            value={note?.body ?? ""}
+            onChange={(e) => setNote({ ...note, body: e.currentTarget.value })}
+          ></textarea>
+        </div>
       ) : null}
     </div>
   );

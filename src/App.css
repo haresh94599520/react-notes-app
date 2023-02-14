@@ -2,6 +2,7 @@
 
 html {
   font-size: 62.5%;
+  color-scheme: light dark;
   --color-main: #f68657;
   --color-text: #383a3f;
   --color-dark: #1f2124;
@@ -23,6 +24,19 @@ html {
   --color-white: #2e3235;
   --color-border: #252629;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  .container {
+    --color-main: #f68657;
+    --color-text: #d6d1d1;
+    --color-dark: #f5f6f7;
+    --color-gray: #999;
+    --color-bg: #1f2124;
+    --color-lighter: #292a2c;
+    --color-white: #2e3235;
+    --color-border: #252629;
+  }
+} */
 
 body {
   font-family: "Lexend", sans-serif;
@@ -60,6 +74,8 @@ a {
   background-color: var(--color-white);
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
   position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 .app-header {
@@ -176,10 +192,7 @@ a {
 }
 
 .notes-list {
-  height: 100%;
   overflow-y: auto;
-  padding-bottom: 100px;
-  /* scrollbar-width: none; Firefox */
 }
 
 .notes-list-item {
@@ -273,15 +286,27 @@ a {
   color: var(--color-text);
 }
 
+.note {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.note .textarea-container {
+  position: relative;
+}
+
 .note textarea {
   color: inherit;
   background-color: var(--color-white);
   border: none;
   padding: 16px 12px;
-  width: 100%;
-  height: 70vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   resize: none;
-  /* scrollbar-width: none; Firefox */
+  cursor: auto;
 }
 
 .note textarea:active,
@@ -291,7 +316,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background-color: var(--color-lighter);
 }
@@ -303,6 +328,6 @@ a {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: var(--color-text);
 }
